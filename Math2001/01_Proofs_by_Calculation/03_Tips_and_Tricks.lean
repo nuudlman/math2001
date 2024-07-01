@@ -151,8 +151,12 @@ example {c : ℚ} (h1 : 4 * c + 1 = 3 * c - 2) : c = -3 :=
     _ = 3 * c - 2 - 3 * c - 2 + 1 := by rw [h1]
     _ = -3 := by ring
 
+-- Exercise 1.3.10
 example {p : ℝ} (h1 : 5 * p - 3 = 3 * p + 1) : p = 2 :=
-  sorry
+  calc
+    p = (5 * p - 3 - 3 * p + 3)/2 := by ring
+    _ = (3 * p + 1 - 3 * p + 3)/2 := by rw [h1]
+    _ = 2 := by ring
 
 example {x y : ℤ} (h1 : 2 * x + y = 4) (h2 : x + y = 1) : x = 3 :=
   sorry
