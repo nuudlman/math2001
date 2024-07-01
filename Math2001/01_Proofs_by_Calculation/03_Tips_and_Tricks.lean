@@ -56,7 +56,10 @@ example {x y : ℤ} (h1 : 2*x - y = 4) (h2 : y - x + 1 = 2) : x = 5 :=
 
 -- Example 1.3.7
 example {u v : ℚ} (h1 : u + 2*v = 4) (h2 : u - 2*v = 6) : u = 5 :=
-  sorry
+  calc
+    u = ((u + 2*v) + (u - 2*v))/2 := by ring
+    _ = (4 + 6)/2 := by rw [h1, h2]
+    _ = 5 := by ring
 
 -- Example 1.3.8
 example {x y : ℝ} (h1 : x + y = 4) (h2 : 5*x - 3*y = 4) : x = 2 :=
