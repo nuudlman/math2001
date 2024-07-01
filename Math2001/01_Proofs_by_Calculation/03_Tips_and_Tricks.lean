@@ -178,9 +178,11 @@ example {u v : ℝ} (h1 : u + 1 = v) : u ^ 2 + 3 * u + 1 = v ^ 2 + v - 1 :=
     u ^ 2 + 3 * u + 1 = (u + 1) ^ 2 + (u + 1) - 1 := by ring
     _ = v ^ 2 + v - 1 := by rw [h1]
 
+-- Exercise 1.3.14
 example {t : ℚ} (ht : t ^ 2 - 4 = 0) :
     t ^ 4 + 3 * t ^ 3 - 3 * t ^ 2 - 2 * t - 2 = 10 * t + 2 :=
-  sorry
+  calc
+    t ^ 4 + 3 * t ^ 3 - 3 * t ^ 2 - 2 * t - 2 = t ^ 2 - 4 := by ring
 
 example {x y : ℝ} (h1 : x + 3 = 5) (h2 : 2 * x - y * x = 0) : y = 2 :=
   sorry
