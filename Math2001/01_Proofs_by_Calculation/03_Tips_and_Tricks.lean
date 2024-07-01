@@ -63,7 +63,10 @@ example {u v : ℚ} (h1 : u + 2*v = 4) (h2 : u - 2*v = 6) : u = 5 :=
 
 -- Example 1.3.8
 example {x y : ℝ} (h1 : x + y = 4) (h2 : 5*x - 3*y = 4) : x = 2 :=
-  sorry
+  calc
+    x = (3*(x+y) + (5*x - 3*y))/8 := by ring
+    _ = (3*4 + 4)/8 := by rw[h1, h2]
+    _ = 2 := by ring
 
 -- Example 1.3.9
 example {a b : ℚ} (h1 : a - 3 = 2*b) : a^2 - a + 3 = 4*b^2 + 10*b + 9 :=
