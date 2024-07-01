@@ -87,9 +87,12 @@ example {z : ℝ} (h1 : z^2 - 2 = 0) : z^4 - z^3 - z^2 + 2*z + 1 = 3 :=
 Solve these problems yourself.  You may find it helpful to solve them on paper before typing them
 up in Lean. -/
 
-
-example {x y : ℝ} (h1 : x = 3) (h2 : y = 4 * x - 3) : y = 9 :=
-  sorry
+-- Exercise 1.3.1
+example {x y : ℝ} (h1 : x = 3) (h2 : y = 4*x - 3) : y = 9 :=
+  calc
+    y = 4*x - 3 := by rw [h2]
+    _ = 4*3 - 3 := by rw [h1]
+    _ = 9 := by ring
 
 example {a b : ℤ} (h : a - b = 0) : a = b :=
   sorry
