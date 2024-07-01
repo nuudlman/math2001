@@ -94,8 +94,12 @@ example {x y : ℝ} (h1 : x = 3) (h2 : y = 4*x - 3) : y = 9 :=
     _ = 4*3 - 3 := by rw [h1]
     _ = 9 := by ring
 
+-- Exercise 1.3.2
 example {a b : ℤ} (h : a - b = 0) : a = b :=
-  sorry
+  calc
+    a = (a - b) + b := by ring
+    _ = 0 + b := by rw [h]
+    _ = b := by ring
 
 example {x y : ℤ} (h1 : x - 3 * y = 5) (h2 : y = 3) : x = 14 :=
   sorry
