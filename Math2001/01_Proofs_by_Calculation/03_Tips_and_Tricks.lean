@@ -158,8 +158,12 @@ example {p : ℝ} (h1 : 5 * p - 3 = 3 * p + 1) : p = 2 :=
     _ = (3 * p + 1 - 3 * p + 3)/2 := by rw [h1]
     _ = 2 := by ring
 
+-- Exercise 1.3.11
 example {x y : ℤ} (h1 : 2 * x + y = 4) (h2 : x + y = 1) : x = 3 :=
-  sorry
+  calc
+    x = 2 * x + y - (x + y) := by ring
+    _ = 4 - 1 := by rw [h1, h2]
+    _ = 3 := by ring
 
 example {a b : ℝ} (h1 : a + 2 * b = 4) (h2 : a - b = 1) : a = 2 :=
   sorry
