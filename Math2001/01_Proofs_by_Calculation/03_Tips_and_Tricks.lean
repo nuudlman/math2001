@@ -108,8 +108,12 @@ example {x y : ℤ} (h1 : x - 3*y = 5) (h2 : y = 3) : x = 14 :=
     _ = 5 + 3*3 := by rw [h1, h2]
     _ = 14 := by ring
 
-example {p q : ℚ} (h1 : p - 2 * q = 1) (h2 : q = -1) : p = -1 :=
-  sorry
+-- Exercise 1.3.4
+example {p q : ℚ} (h1 : p - 2*q = 1) (h2 : q = -1) : p = -1 :=
+  calc
+    p = (p - 2*q) + 2*q := by ring
+    _ = 1 + 2*(-1) := by rw [h1, h2]
+    _ = -1 := by ring
 
 example {x y : ℚ} (h1 : y + 1 = 3) (h2 : x + 2 * y = 3) : x = -1 :=
   sorry
